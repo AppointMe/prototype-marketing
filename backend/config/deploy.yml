@@ -1,0 +1,45 @@
+# Name of your application. Used to uniquely configure containers.
+service: prototype-marketing-bck
+
+# Name of the container image.
+image: my-user/prototype-marketing-bck
+
+# Deploy to these servers.
+servers:
+  web:
+    - 192.168.0.1
+
+proxy:
+  ssl: true
+  host: app.example.com
+  app_port: 8090
+  health_check:
+    interval: 3
+    path: /api/health
+    timeout: 3
+
+# Credentials for your image host.
+registry:
+  username: my-user
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+# Configure builder setup.
+builder:
+  arch: amd64
+
+# env:
+#   clear:
+#     DB_HOST: 192.168.0.2
+#   secret:
+#     - RAILS_MASTER_KEY
+
+aliases:
+  shell: app exec --interactive --reuse "bash"
+
+ssh:
+  user: app
+
+volumes:
+  #- /path/on/host:/path/in/container:ro
+  - ~/prototype-marketing-bck/pb_data:/app/pb_data # Persistent storage for pocketbase
