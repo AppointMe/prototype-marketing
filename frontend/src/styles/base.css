@@ -18,3 +18,27 @@ body {
     line-height: 1.6;
     font-size: 16px;
 }
+
+@theme {
+    --color-primary: var(--color-primary);
+    --color-secondary: var(--color-secondary);
+    --color-accent: var(--color-accent);
+    --color-bg: var(--color-bg);
+    --color-text: var(--color-text);
+
+    --font-main: var(--font-main);
+    --font-heading: var(--font-heading);
+
+    --spacing-xs: var(--spacing-xs);
+    --spacing-sm: var(--spacing-sm);
+    --spacing-md: var(--spacing-md);
+    --spacing-lg: var(--spacing-lg);
+
+    --breakpoint-sm: var(--breakpoint-sm);
+    --breakpoint-md: var(--breakpoint-md);
+    --breakpoint-lg: var(--breakpoint-lg);
+
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

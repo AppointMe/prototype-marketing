@@ -16,12 +16,5 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@styles': path.resolve(__dirname, './src/styles'),
     }
-  },
-  css: {
-    preprocessorOptions: {
-      css: {
-        additionalData: `@import "@/styles/variables.css";`,
-      },
-    },
-  },
+  }
 })
