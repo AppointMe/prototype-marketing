@@ -1,0 +1,23 @@
+:root {
+    /* 🎨 Colores */
+    --color-primary: #900A0B;
+    --color-secondary: #262626;
+    --color-accent: #F9FAF5;
+    --color-bg: #FBFBFB;
+    --color-text: #151419;
+
+    /* 🧬 Tipografía */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
+    /* 📐 Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+
+    /* 📏 Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+}
