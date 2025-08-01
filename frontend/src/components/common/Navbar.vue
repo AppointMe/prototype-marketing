@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
 <template>
   <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <nav class="mx-4 my-2 px-4 py-3 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">
+      <h1 class="text-4xl font-bold font-heading">
         <span class="text-indigo-700">Appoint</span><span class="text-pink-500">Me</span>
       </h1>
       <ul class="flex flex-row gap-6 text-text text-sm font-medium">
