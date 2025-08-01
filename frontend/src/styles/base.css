@@ -1,15 +1,6 @@
 @import "tailwindcss";
 @import './variables.css';
 
-/* Reset CSS */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Tipografía y color por defecto */
 body {
     font-family: var(--font-main), sans-serif;

@@ -1,11 +1,14 @@
-<script setup lang="ts">
-
+<script setup>
+  import Navbar from '@/components/common/Navbar.vue'
+  import Hero from '@components/sections/partners/Hero.vue'
 </script>
 
 <template>
-  <h1>PartersLanding</h1>
+  <div class="flex flex-col items-center justify-start h-screen bg-white">
+    <Navbar />
+    <Hero />
+  </div>
 </template>
 
 <style scoped>
-
 </style>
