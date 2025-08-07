@@ -23,7 +23,7 @@ function getImageUrl(feature) {
 </script>
 
 <template>
-  <section class="py-16 bg-white">
+  <section class="my-16 py-8 px-4 max-w-7xl bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12 font-title text-primary">¿Qué ofrecemos?</h2>
 
