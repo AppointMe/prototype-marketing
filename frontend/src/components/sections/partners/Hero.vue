@@ -4,7 +4,7 @@
 
 <template>
   <section class="pt-28 pb-16 bg-white flex flex-col w-full items-center" id="hero">
-    <div class="max-w-7xl mx-auto px-4 flex flex-row lg:flex-row items-center">
+    <div class="container mx-auto px-4 flex flex-row lg:flex-row items-center">
       <div class="w-1/2 text-center lg:text-left space-y-6">
         <h2 class="text-4xl font-bold leading-snug">
           Los mejores <span class="text-pink-500">Negocios</span> <br />

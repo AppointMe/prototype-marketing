@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
 <template>
   <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 flex flex-row items-center gap-12 lg:flex-col">
+    <div class="container mx-auto px-4 flex flex-row lg:flex-col items-center gap-12">
       <!-- Text Content -->
       <div class="lg:w-1/2">
         <!-- Línea decorativa -->

@@ -8,7 +8,7 @@
       <h1 class="text-4xl font-bold font-heading">
         <span class="text-indigo-700">Appoint</span><span class="text-pink-500">Me</span>
       </h1>
-      <ul class="flex flex-row gap-6 text-text text-sm font-medium">
+      <ul class="flex flex-row justify-evenly w-1/2 gap-6 text-text text-lg font-bold">
         <li><a href="#features" class="hover:text-indigo-500">¿Qué ofrecemos?</a></li>
         <li><a href="#about" class="hover:text-indigo-500">¿Quiénes somos?</a></li>
         <li><a href="#plans" class="hover:text-indigo-500">Planes</a></li>
