@@ -1,7 +1,5 @@
 <script setup>
 import FeatureComponent from '@/components/common/FeatureComponent.vue'
-import AvatarCircle from '@/components/common/AvatarCircle.vue'
-import TestimonialCard from '@/components/common/TestimonialCard.vue'
 import imagePlaceholder from '@/assets/phone.png'
 import { ref } from 'vue'
 

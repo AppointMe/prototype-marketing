@@ -3,6 +3,7 @@
   import Hero from '@components/sections/clients/Hero.vue'
   import Features from '@components/sections/clients/Features.vue'
   import Testimonials from '@components/sections/clients/Testimonials.vue'
+  import Faqs from '@components/sections/clients/Faqs.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@
     <Hero />
     <Features />
     <Testimonials />
+    <Faqs />
 
   </div>
 </template>

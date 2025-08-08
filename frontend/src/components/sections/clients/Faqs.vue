@@ -1,0 +1,139 @@
+<script setup>
+import FaqItem from '@/components/common/FaqItem.vue'
+import faqIllustration from '@/assets/trompeta.png'
+import { ref } from 'vue'
+
+const faqs = ref([
+  {
+    question: '¿Necesito crear una cuenta para agendar una cita?',
+    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    question: '¿Qué pasa si un negocio no confirma mi cita?',
+    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    question: '¿Puedo pagar en efectivo o solo en línea?',
+    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    question: '¿Qué hago si quiero cambiar o cancelar una cita?',
+    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  }
+])
+</script>
+
+<template>
+  <section class="clients-faqs">
+    <!-- Sección de encabezado con título y subrayado -->
+    <div class="clients-faqs__header">
+      <h2 class="clients-faqs__title">FAQs</h2>
+      <div class="clients-faqs__underline"></div>
+    </div>
+
+    <!-- Contenedor principal: dos columnas horizontales -->
+    <div class="clients-faqs__inner">
+      <!-- Columna de información e imagen -->
+      <div class="clients-faqs__info">
+        <p class="clients-faqs__desc">
+          Con AppointMe, agendar citas y descubrir nuevos servicios es más fácil que nunca. Aquí respondemos tus preguntas más comunes:
+        </p>
+        <img
+          class="clients-faqs__image"
+          :src="faqIllustration"
+          alt="Ilustración FAQs"
+        />
+      </div>
+
+      <!-- Columna del componente de FAQs -->
+      <div class="clients-faqs__card">
+        <div class="faq-card">
+          <div class="faq-card__header">
+            <span>¿Tienes dudas? Estamos aquí para ayudarte.</span>
+          </div>
+          <div class="faq-card__list">
+            <FaqItem
+              v-for="(f, i) in faqs"
+              :key="i"
+              :question="f.question"
+              :answer="f.answer"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.clients-faqs {
+  padding: 4rem;
+}
+
+/* Encabezado con título y barra */
+.clients-faqs__header {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+.clients-faqs__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.clients-faqs__underline {
+  width: 4rem;
+  height: 0.25rem;
+  background: var(--purple);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+/* Contenedor de dos columnas */
+.clients-faqs__inner {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Columna de info */
+.clients-faqs__info {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.clients-faqs__desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-gray);
+}
+.clients-faqs__image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Columna de tarjeta */
+.clients-faqs__card {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+.faq-card {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.faq-card__header {
+  background-color: purple;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+.faq-card__list {
+  background: #fff;
+}
+</style>
