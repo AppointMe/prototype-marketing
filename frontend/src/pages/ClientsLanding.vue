@@ -2,6 +2,7 @@
   import Navbar from '@/components/common/Navbar.vue'
   import Hero from '@components/sections/clients/Hero.vue'
   import Features from '@components/sections/clients/Features.vue'
+  import Testimonials from '@components/sections/clients/Testimonials.vue'
 </script>
 
 <template>
@@ -9,9 +10,8 @@
     <Navbar />
     <Hero />
     <Features />
+    <Testimonials />
 
   </div>
 </template>
 
-<style scoped>
-</style>
