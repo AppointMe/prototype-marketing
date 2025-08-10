@@ -8,7 +8,7 @@ const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL
 
 onMounted(async () => {
   try {
-    features.value = await pb.collection('features').getFullList({ sort: '-created' })
+    features.value = await pb.collection('partners_features').getFullList({ sort: '-created' })
     // feature.title, feature.description, feature.icon
     console.log("Features fetched successfully:", features.value)
   } catch (err) {
