@@ -4,6 +4,7 @@
   import Features from '@components/sections/partners/Features.vue'
   import Introduction from "@components/sections/partners/Introduction.vue";
   import Us from "@components/sections/partners/Us.vue";
+  import Plans from "@components/sections/partners/Plans.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@
     <Features />
     <Introduction />
     <Us />
+    <Plans />
   </div>
 </template>
 
