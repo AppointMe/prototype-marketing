@@ -75,20 +75,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-.scrollbar-hide {
-  overflow-x: auto;
-}
-
 @media (max-width: 1023px) {
   .team-container {
     flex-direction: column;
