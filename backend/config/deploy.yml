@@ -2,16 +2,16 @@
 service: prototype-marketing-bck
 
 # Name of the container image.
-image: my-user/prototype-marketing-bck
+image: appointmeadmin/prototype-marketing-bck
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - server-1.appointme.today
 
 proxy:
   ssl: true
-  host: app.example.com
+  host: marketing-bck.appointme.today
   app_port: 8090
   health_check:
     interval: 3
@@ -20,7 +20,7 @@ proxy:
 
 # Credentials for your image host.
 registry:
-  username: my-user
+  username: appointmeadmin
   password:
     - KAMAL_REGISTRY_PASSWORD
 
@@ -28,17 +28,12 @@ registry:
 builder:
   arch: amd64
 
-# env:
-#   clear:
-#     DB_HOST: 192.168.0.2
-#   secret:
-#     - RAILS_MASTER_KEY
-
 aliases:
   shell: app exec --interactive --reuse "bash"
 
 ssh:
-  user: app
+  user: root
+  keys: ["~/.ssh/appointme-server-1.pem"]
 
 volumes:
   #- /path/on/host:/path/in/container:ro
