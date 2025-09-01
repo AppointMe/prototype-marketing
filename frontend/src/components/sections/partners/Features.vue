@@ -17,7 +17,7 @@ onMounted(async () => {
 })
 
 function getImageUrl(feature) {
-  return `${pocketbaseUrl}/api/files/features/${feature.id}/${feature.icon}`
+  return `${pocketbaseUrl}/api/files/partners_features/${feature.id}/${feature.icon}`
 }
 
 </script>

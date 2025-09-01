@@ -35,8 +35,7 @@ onMounted(async () => {
       </p>
 
       <!-- Carrusel de miembros del equipo -->
-      <div class="overflow-x-auto scrollbar-hide">
-        <div class="flex gap-6 lg:gap-12 px-2 min-w-max">
+      <div class="team-container flex flex-row items-center justify-center md:flex-col">
           <div
               v-for="member in teamMembers"
               :key="member.id"
@@ -70,24 +69,16 @@ onMounted(async () => {
               </template>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+@media (max-width: 1023px) {
+  .team-container {
+    flex-direction: column;
+  }
 }
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
-.scrollbar-hide {
-  overflow-x: auto;
-}
+
 </style>
