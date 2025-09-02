@@ -1,8 +1,10 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import ContactUs from "@components/common/ContactUs.vue";
 
 const route = useRoute()
+const showContactForm = ref(false)
 
 const secondButton = computed(() => {
   if (route.path === '/clients') {
@@ -37,12 +39,16 @@ const secondButton = computed(() => {
         >
           {{ secondButton.label }}
         </a>
-        <a href="#contact" class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+        <button
+            @click="showContactForm = true"
+            class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-lg text-sm font-semibold"
+        >
           Contáctanos
-        </a>
+        </button>
       </div>
 
     </nav>
+    <ContactUs v-if="showContactForm" @close="showContactForm = false" />
   </header>
 </template>
 
