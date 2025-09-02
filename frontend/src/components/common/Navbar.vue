@@ -1,5 +1,17 @@
 <script setup>
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
+const route = useRoute()
+
+const secondButton = computed(() => {
+  if (route.path === '/clients') {
+    return { label: '¿Tienes un negocio?', href: '/partners' }
+  } else if (route.path === '/partners') {
+    return { label: '¿Eres un cliente?', href: '/clients' }
+  }
+  return null
+})
 </script>
 
 <template>
@@ -16,9 +28,20 @@
         <li><a href="#plans" class="hover:text-indigo-500">Planes</a></li>
         <li><a href="#demo" class="hover:text-indigo-500">Demo</a></li>
       </ul>
-      <a href="#contact" class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-lg text-sm font-semibold">
-        Contáctanos
-      </a>
+
+      <div class="flex gap-4">
+        <a
+            v-if="secondButton"
+            :href="secondButton.href"
+            class="bg-white border border-indigo-500 text-indigo-500 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-50"
+        >
+          {{ secondButton.label }}
+        </a>
+        <a href="#contact" class="bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-4 py-2 rounded-lg text-sm font-semibold">
+          Contáctanos
+        </a>
+      </div>
+
     </nav>
   </header>
 </template>
