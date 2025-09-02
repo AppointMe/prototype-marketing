@@ -5,6 +5,7 @@
   import Introduction from "@components/sections/partners/Introduction.vue";
   import Us from "@components/sections/partners/Us.vue";
   import Plans from "@components/sections/partners/Plans.vue";
+  import Demo from "@components/sections/partners/Demo.vue";
 </script>
 
 <template>
@@ -15,6 +16,7 @@
     <Introduction />
     <Us />
     <Plans />
+    <Demo />
   </div>
 </template>
 
