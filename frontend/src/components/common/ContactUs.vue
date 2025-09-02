@@ -6,24 +6,24 @@ const features = ref([])
 const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL
 
 const email = ref('')
-const role = ref('') // nuevo campo
+const type = ref('')
 const message = ref('')
 
 const emit = defineEmits(['close'])
 
 function submitForm() {
-  if (!email.value || !role.value || !message.value) {
+  if (!email.value || !type.value || !message.value) {
     alert('Por favor, llena todos los campos')
     return
   }
 
   pb.collection('contact_form').create({
     email: email.value,
-    type: role.value,
+    type: type.value,
     message: message.value
   }).then(() => {
     email.value = ''
-    role.value = ''
+    type.value = ''
     message.value = ''
     emit('close')
   }).catch((err) => {
@@ -31,7 +31,7 @@ function submitForm() {
   })
 
   email.value = ''
-  role.value = ''
+  type.value = ''
   message.value = ''
   emit('close')
 }
@@ -60,7 +60,7 @@ function submitForm() {
         />
 
         <select
-            v-model="role"
+            v-model="type"
             class="border rounded-lg p-3 w-full text-gray-700"
             required
         >
