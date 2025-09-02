@@ -28,6 +28,7 @@ function submitForm() {
     emit('close')
   }).catch((err) => {
     console.error('Error al enviar el mensaje:', err)
+    alert('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.')
   })
 
   email.value = ''
