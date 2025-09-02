@@ -19,7 +19,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="my-16 py-8 px-4 max-w-7xl bg-white">
+  <section class="my-16 py-8 px-4 max-w-7xl bg-white" id="plans">
     <div class="container mx-auto px-4">
       <!-- Título -->
       <div class="text-center mb-4">
