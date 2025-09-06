@@ -1,6 +1,6 @@
 <!-- src/components/sections/clients/Testimonials.vue -->
 <template>
-  <section class="clients-testimonials">
+  <section class="clients-testimonials" id="testimonials">
     <div class="clients-testimonials__inner">
       <!-- Título -->
       <h2 class="clients-testimonials__title">Testimonios</h2>

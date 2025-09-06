@@ -201,7 +201,7 @@ function closeSidebar() {
 }
 
 /* Responsive styles */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .nav-links,
   .nav-actions {
     display: none !important;

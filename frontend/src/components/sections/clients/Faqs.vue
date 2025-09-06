@@ -24,7 +24,7 @@ const faqs = ref([
 </script>
 
 <template>
-  <section class="clients-faqs">
+  <section class="clients-faqs" id="faq">
     <!-- Sección de encabezado con título y subrayado -->
     <div class="clients-faqs__header">
       <h2 class="clients-faqs__title">FAQs</h2>
