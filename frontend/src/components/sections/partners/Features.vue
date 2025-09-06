@@ -31,7 +31,7 @@ function getImageUrl(feature) {
         <div
             v-for="feature in features"
             :key="feature.id"
-            class="bg-white p-6 rounded-2xl shadow-md text-center hover:border-primary hover:border-2 transition-all duration-300"
+            class="bg-white p-6 rounded-2xl shadow-md text-center hover:border-primary hover:border-2 transition-all duration-25"
         >
           <div class="flex justify-center mb-4">
             <img :src="getImageUrl(feature)" alt="Icono" class="h-12 w-12 object-contain" />
