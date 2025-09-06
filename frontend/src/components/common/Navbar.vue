@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 import ContactUs from "@components/common/ContactUs.vue";
+import logo from '@/assets/icons/appointme.svg'
 
 const route = useRoute()
 const showContactForm = ref(false)
@@ -46,11 +47,9 @@ function closeSidebar() {
   <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <nav class="mx-4 my-2 px-4 py-3 flex justify-between items-center navbar-main">
       <div class="logo">
-        <h1 class="text-4xl font-bold font-heading">
-          <a href="#hero" class="flex items-center">
-            <span class="text-indigo-700">Appoint</span><span class="text-pink-500">Me</span>
-          </a>
-        </h1>
+        <a href="#hero" class="flex items-center">
+          <img :src="logo" alt="AppointMe Logo" class="h-14 w-auto"/>
+        </a>
       </div>
       <!-- Desktop nav -->
       <ul class="flex flex-row justify-evenly w-1/2 gap-6 text-text text-lg font-bold nav-links">
