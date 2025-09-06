@@ -56,7 +56,7 @@
 
   #hero {
     padding: 2rem 0.5rem !important;
-    margin: 2rem 0 0 0 !important;
+    margin: 8rem 0 0 0 !important;
     max-width: 100vw !important;
   }
 }
