@@ -4,6 +4,7 @@
   import Features from '@components/sections/clients/Features.vue'
   import Testimonials from '@components/sections/clients/Testimonials.vue'
   import Faqs from '@components/sections/clients/Faqs.vue'
+  import Footer from "@components/common/Footer.vue";
 </script>
 
 <template>
@@ -13,7 +14,7 @@
     <Features />
     <Testimonials />
     <Faqs />
-
+    <Footer />
   </div>
 </template>
 
