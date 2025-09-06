@@ -7,6 +7,27 @@ const route = useRoute()
 const showContactForm = ref(false)
 const showSidebar = ref(false)
 
+// Define nav links for each page
+const partnersLinks = [
+  { href: "#features", label: "¿Qué ofrecemos?" },
+  { href: "#about", label: "¿Quiénes somos?" },
+  { href: "#plans", label: "Planes" },
+  { href: "#demo", label: "Demo" }
+]
+
+const clientsLinks = [
+  { href: "#features", label: "¿Por qué AppointMe?" },
+  { href: "#how", label: "¿Cómo funciona?" },
+  { href: "#testimonials", label: "Testimonios" },
+  { href: "#faq", label: "Preguntas frecuentes" }
+]
+
+// Choose links based on route
+const navLinks = computed(() => {
+  if (route.path === '/clients') return clientsLinks
+  return partnersLinks
+})
+
 const secondButton = computed(() => {
   if (route.path === '/clients') {
     return { label: '¿Tienes un negocio?', href: '/partners' }
@@ -33,10 +54,9 @@ function closeSidebar() {
       </div>
       <!-- Desktop nav -->
       <ul class="flex flex-row justify-evenly w-1/2 gap-6 text-text text-lg font-bold nav-links">
-        <li><a href="#features" class="hover:text-indigo-500">¿Qué ofrecemos?</a></li>
-        <li><a href="#about" class="hover:text-indigo-500">¿Quiénes somos?</a></li>
-        <li><a href="#plans" class="hover:text-indigo-500">Planes</a></li>
-        <li><a href="#demo" class="hover:text-indigo-500">Demo</a></li>
+        <li v-for="link in navLinks" :key="link.href">
+          <a :href="link.href" class="hover:text-indigo-500">{{ link.label }}</a>
+        </li>
       </ul>
       <div class="flex gap-4 nav-actions">
         <a
@@ -55,7 +75,7 @@ function closeSidebar() {
       </div>
       <!-- Hamburger for mobile -->
       <button class="hamburger" @click="showSidebar = true" aria-label="Open navigation">
-        <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+        <svg width="32" height="32"  viewBox="0 0 24 24">
           <rect y="4" width="24" height="2" rx="1" fill="#6366F1"/>
           <rect y="11" width="24" height="2" rx="1" fill="#6366F1"/>
           <rect y="18" width="24" height="2" rx="1" fill="#6366F1"/>
@@ -67,16 +87,15 @@ function closeSidebar() {
       <div v-if="showSidebar" class="sidebar-overlay" @click.self="closeSidebar">
         <aside class="sidebar">
           <button class="close-btn" @click="closeSidebar" aria-label="Close navigation">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="28" height="28" viewBox="0 0 24 24">
               <path d="M6 6L18 18" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
               <path d="M6 18L18 6" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
           <ul class="sidebar-links">
-            <li><a href="#features" @click="closeSidebar">¿Qué ofrecemos?</a></li>
-            <li><a href="#about" @click="closeSidebar">¿Quiénes somos?</a></li>
-            <li><a href="#plans" @click="closeSidebar">Planes</a></li>
-            <li><a href="#demo" @click="closeSidebar">Demo</a></li>
+            <li v-for="link in navLinks" :key="link.href">
+              <a :href="link.href" @click="closeSidebar">{{ link.label }}</a>
+            </li>
           </ul>
           <div class="sidebar-actions">
             <a
