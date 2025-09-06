@@ -40,7 +40,7 @@ function getImageUrl(feature) {
           <!-- Text Content -->
           <div class="flex-1 min-w-[220px] md:min-w-[280px] text-left">
             <h3
-              class="text-3xl font-semibold mb-4 text-indigo-700"
+              class="text-2xl font-semibold mb-4 text-primary"
             >
               {{ feature.title }}
             </h3>

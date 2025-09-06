@@ -36,7 +36,7 @@ function getImageUrl(feature) {
           <div class="flex justify-center mb-4">
             <img :src="getImageUrl(feature)" alt="Icono" class="h-12 w-12 object-contain" />
           </div>
-          <h3 class="text-lg font-semibold font-title mb-2 text-secondary">
+          <h3 class="text-lg font-semibold font-title mb-2 text-primary">
             {{ feature.title }}
           </h3>
           <p class="text-sm font-body text-text" v-html="feature.description"></p>

@@ -3,7 +3,9 @@
   <section class="clients-testimonials" id="testimonials">
     <div class="clients-testimonials__inner">
       <!-- Título -->
-      <h2 class="clients-testimonials__title">Testimonios</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 font-title text-primary">
+        Testimonios
+      </h2>
       <div class="clients-testimonials__underline"></div>
 
 
