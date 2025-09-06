@@ -1,38 +1,25 @@
 <script setup>
 import imagePlaceholder from '@/assets/phone.png'
-import { ref, computed } from 'vue'
+import pb from "@/lib/pocketbase"
+import {ref, onMounted} from 'vue'
 
-const features = [
-  {
-    subtitle: 'Descubre nuevos\nnegocios',
-    desc:     'Explora servicios de belleza, salud, bienestar y más.\nTodo en un solo lugar',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Agenda 100% online',
-    desc:     'Olvídate de las llamadas y mensajes sin respuesta.\n¡Elige la hora y confirma en segundos!',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Recibe notificaciones',
-    desc:     'Confirma tu cita y recibe recordatorios automáticos.\nNunca más olvides una cita importante.',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Comparte tu experiencia',
-    desc:     'Califica y deja reseñas de tus citas.\nAyuda a otros a encontrar los mejores servicios.',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
+const features = ref([])
+const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL
+
+onMounted(async () => {
+  try {
+    features.value = await pb.collection('client_features').getFullList({ sort: '-created' })
+    // feature.title, feature.description, feature.icon
+    console.log("Features fetched successfully:", features.value)
+  } catch (err) {
+    console.error("Error fetching features:", err)
   }
-]
+})
 
-const subtitleWithBreaks = subtitle => subtitle.replace(/\n/g, '<br/>')
-const descWithBreaks = desc => desc.replace(/\n/g, '<br/>')
+function getImageUrl(feature) {
+  return `${pocketbaseUrl}/api/files/client_features/${feature.id}/${feature.icon}`
+}
 
-const activeIndex = ref(0)
 </script>
 
 <template>
@@ -46,24 +33,25 @@ const activeIndex = ref(0)
       <!-- Features List -->
       <div class="flex flex-wrap gap-8 justify-center w-full clients-features__list">
         <div
-          v-for="(item, i) in features"
-          :key="i"
+          v-for="feature in features"
+          :key="feature.id"
           class="flex flex-row items-center justify-between gap-8 w-full mb-8 p-6 last:mb-0 hover:border-primary hover:border-2 transition-all duration-50 rounded-2xl shadow-md"
         >
           <!-- Text Content -->
           <div class="flex-1 min-w-[220px] md:min-w-[280px] text-left">
             <h3
               class="text-3xl font-semibold mb-4 text-indigo-700"
-              v-html="subtitleWithBreaks(item.subtitle)"
-            ></h3>
-            <p class="text-text text-xl" v-html="descWithBreaks(item.desc)"></p>
+            >
+              {{ feature.title }}
+            </h3>
+            <p class="text-text text-xl" v-html="feature.description"></p>
           </div>
 
           <!-- Image Content -->
           <div class="flex-1 min-w-[180px] flex justify-center md:justify-end">
             <img
-              :src="item.imageSrc"
-              :alt="item.imageAlt"
+              :src="getImageUrl(feature)"
+              :alt="feature.title"
               class="max-w-[320px] max-h-[320px]"
             />
           </div>
