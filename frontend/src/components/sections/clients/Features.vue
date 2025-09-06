@@ -34,7 +34,7 @@ const activeIndex = ref(0)
 </script>
 
 <template>
-  <section class="clients-features">
+  <section class="clients-features" id="features">
     <div class="clients-features__inner">
       <!-- FEATURES -->
       <h2 class="clients-features__title">

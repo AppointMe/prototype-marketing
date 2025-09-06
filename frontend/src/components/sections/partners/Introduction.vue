@@ -69,5 +69,43 @@
 </template>
 
 <style scoped>
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 0 !important;
+  }
 
+  .lg\:w-1\/2 {
+    width: 100% !important;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+    text-align: center !important;
+  }
+
+  p {
+    text-align: center !important;
+  }
+
+  a.text-primary {
+    justify-content: center;
+    display: flex;
+  }
+
+  .relative.group {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .relative.group img {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+  }
+}
 </style>
