@@ -1,95 +1,86 @@
 <script setup>
-import FeatureComponent from '@/components/common/FeatureComponent.vue'
 import imagePlaceholder from '@/assets/phone.png'
-import { ref } from 'vue'
+import pb from "@/lib/pocketbase"
+import {ref, onMounted} from 'vue'
 
-const features = [
-  {
-    subtitle: 'Descubre nuevos\nnegocios',
-    desc:     'Explora servicios de belleza, salud, bienestar y más.\nTodo en un solo lugar',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Agenda 100% online',
-    desc:     'Olvídate de las llamadas y mensajes sin respuesta.\n¡Elige la hora y confirma en segundos!',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Recibe notificaciones',
-    desc:     'Confirma tu cita y recibe recordatorios automáticos.\nNunca más olvides una cita importante.',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
-  },
-  {
-    subtitle: 'Comparte tu experiencia',
-    desc:     'Califica y deja reseñas de tus citas.\nAyuda a otros a encontrar los mejores servicios.',
-    imageSrc: imagePlaceholder,
-    imageAlt: 'AppointMe Placeholder'
+const features = ref([])
+const pocketbaseUrl = import.meta.env.VITE_POCKETBASE_URL
+
+onMounted(async () => {
+  try {
+    features.value = await pb.collection('client_features').getFullList({ sort: '-created' })
+    // feature.title, feature.description, feature.icon
+    console.log("Features fetched successfully:", features.value)
+  } catch (err) {
+    console.error("Error fetching features:", err)
   }
-]
+})
 
-const activeIndex = ref(0)
+function getImageUrl(feature) {
+  return `${pocketbaseUrl}/api/files/client_features/${feature.id}/${feature.icon}`
+}
+
 </script>
 
 <template>
-  <section class="clients-features" id="features">
-    <div class="clients-features__inner">
-      <!-- FEATURES -->
-      <h2 class="clients-features__title">
+  <section class="py-16 px-4 md:px-8 mx-4 md:mx-8" id="features">
+    <div class="flex flex-col items-center max-w-5xl mx-auto">
+      <!-- Section Title -->
+      <h2 class="text-3xl font-bold text-center mb-12 font-title text-primary">
         ¿Qué puedes hacer con AppointMe?
       </h2>
 
-      <div class="clients-features__list">
-        <FeatureComponent
-          v-for="(item, i) in features"
-          :key="i"
-          :subtitle="item.subtitle"
-          :desc="item.desc"
-          :imageSrc="item.imageSrc"
-          :imageAlt="item.imageAlt"
-        />
+      <!-- Features List -->
+      <div class="flex flex-wrap gap-8 justify-center w-full clients-features__list">
+        <div
+          v-for="feature in features"
+          :key="feature.id"
+          class="flex flex-row items-center justify-between gap-8 w-full mb-8 p-6 last:mb-0 hover:border-primary hover:border-2 transition-all duration-50 rounded-2xl shadow-md"
+        >
+          <!-- Text Content -->
+          <div class="flex-1 min-w-[220px] md:min-w-[280px] text-left">
+            <h3
+              class="text-2xl font-semibold mb-4 text-primary"
+            >
+              {{ feature.title }}
+            </h3>
+            <p class="text-text text-xl" v-html="feature.description"></p>
+          </div>
+
+          <!-- Image Content -->
+          <div class="flex-1 min-w-[180px] flex justify-center md:justify-end">
+            <img
+              :src="getImageUrl(feature)"
+              :alt="feature.title"
+              class="max-w-[320px] max-h-[320px]"
+            />
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.clients-features {
-  padding: 4rem 1rem;
-  margin: 0 2rem;
-}
-.clients-features__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* FEATURES TITLE */
-.clients-features__title {
-  font-size: 2rem;
-  font-weight: 600;
-  text-align: left;
-  margin-bottom: 2rem;
-  position: relative;
-}
-.clients-features__title::after {
-  content: '';
-  display: block;
-  width: 3rem;
-  height: 0.25rem;
-  background: var(--purple);
-  margin-top: 0.5rem;
-}
-
-.clients-features__list {
-  /* spacing handled by FeatureComponent margin-bottom */
-}
-
-/* DIVIDER */
-.clients-features__divider {
-  height: 1px;
-  background: var(--gray-light);
-  margin: 4rem 0;
+@media (max-width: 900px) {
+  .clients-features__list > div {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  h2 {
+    text-align: center !important;
+    font-size: 1.25rem !important;
+  }
+  section {
+    padding: 2.5rem 0.5rem !important;
+    margin: 0 0.5rem !important;
+  }
+  img {
+    max-width: 240px !important;
+    max-height: 240px !important;
+  }
 }
 </style>

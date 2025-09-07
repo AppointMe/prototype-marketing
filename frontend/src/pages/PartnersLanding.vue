@@ -6,6 +6,7 @@
   import Us from "@components/sections/partners/Us.vue";
   import Plans from "@components/sections/partners/Plans.vue";
   import Demo from "@components/sections/partners/Demo.vue";
+  import Footer from "@components/common/Footer.vue";
 </script>
 
 <template>
@@ -17,6 +18,7 @@
     <Us />
     <Plans />
     <Demo />
+    <Footer />
   </div>
 </template>
 
