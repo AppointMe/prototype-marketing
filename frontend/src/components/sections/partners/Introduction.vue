@@ -32,7 +32,7 @@
 
       <!-- Video Thumbnail -->
       <div class="lg:w-1/2 relative group">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+        <a href="https://prototype.appointme.today" target="_blank"
            class="block overflow-hidden rounded-3xl shadow-lg">
           <img
               src="/src/assets/hero.png"
@@ -43,7 +43,7 @@
 
         <!-- Play button -->
         <a
-            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            href="https://prototype.appointme.today"
             target="_blank"
             class="absolute inset-0 flex items-center justify-center"
         >
