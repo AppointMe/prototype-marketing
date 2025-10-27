@@ -7,8 +7,8 @@
     <div class="container mx-auto px-4 flex flex-row items-center hero-container">
       <div class="w-1/2 text-center lg:text-left space-y-6 hero-text">
         <h2 class="text-4xl font-bold leading-snug">
-          Tu cita en <span class="text-pink-500">segundos</span>. <br />
-          <span class="text-black">Únete a</span> <span class="text-purple-500">AppointMe</span>
+          El mejor <span class="text-pink-500">marketplace de servicios</span> <br />
+          <span class="text-black">y gestor de citas con</span> <span class="text-purple-500">AppointMe</span>
         </h2>
         <p class="text-gray-500">
           Descubre negocios cerca de ti. <br /> Elige el servicio que necesitas y reserva en segundos
