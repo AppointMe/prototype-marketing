@@ -6,19 +6,23 @@ import { ref } from 'vue'
 const faqs = ref([
   {
     question: '¿Necesito crear una cuenta para agendar una cita?',
-    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    answer: 'Sí. Para agendar una cita necesitás crear una cuenta gratuita en AppointMe. Esto te permite llevar control de tus reservas, recibir recordatorios, y comunicarte directamente con los negocios.'
   },
   {
-    question: '¿Qué pasa si un negocio no confirma mi cita?',
-    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-  },
+      question: '¿Qué beneficios obtengo al registrar mi negocio?',
+      answer: 'Tu negocio gana visibilidad frente a cientos de usuarios que buscan servicios como el tuyo. Además, podés gestionar tus citas, controlar la disponibilidad y mucho más.'
+    },
   {
-    question: '¿Puedo pagar en efectivo o solo en línea?',
-    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    question: '¿Puedo registrar más de un servicio o sucursal?',
+    answer: 'Sí. Desde tu cuenta podés administrar varios servicios, colaboradores o sucursales, todo desde un mismo perfil. Ideal para salones, clínicas, talleres o cualquier negocio con varios puntos de atención.'
   },
   {
     question: '¿Qué hago si quiero cambiar o cancelar una cita?',
-    answer:   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    answer:   'Solo ingresá a “Mis citas”, seleccioná la cita que querés ajustar y elegí “Editar” o “Cancelar”.'
+  },
+  {
+    question: '¿Qué pasa si llego tarde a mi cita?',
+    answer:   'Cada negocio maneja su propia política, pero la mayoría permite un margen de tolerancia. Si sabés que no llegarás, podés avisar desde la app para evitar penalizaciones o reagendar fácilmente.'
   }
 ])
 </script>
