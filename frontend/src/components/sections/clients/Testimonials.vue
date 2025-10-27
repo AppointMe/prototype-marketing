@@ -15,17 +15,6 @@
         :author="current.author"
       />
 
-      <!-- Fila de avatares -->
-      <div class="clients-testimonials__avatars">
-        <AvatarCircle
-          v-for="(t, i) in testimonials"
-          :key="i"
-          :src="t.avatar"
-          :alt="t.author"
-          :active="i === activeIndex"
-          @select="activeIndex = i"
-        />
-      </div>
     </div>
   </section>
 </template>
@@ -38,8 +27,8 @@ import imgp            from '@/assets/mujersonriendo.png'
 
 const testimonials = [
   {
-    quote:  'Reservar una cita en el salón nunca había sido tan fácil!',
-    author: 'Laura Marroquín - cliente frecuente',
+    quote:  'Encontrar un servicio y reservar una cita nunca había sido tan fácil!',
+    author: 'Laura Marroquín - Cliente frecuente',
     avatar: imgp
   },
   {
