@@ -9,14 +9,14 @@ import PartnersLanding from '@/pages/PartnersLanding.vue'
     que define la URL canónica de la página.
 
     Basicamente es esto, pero en vue-router:
-    <link rel="canonical" href="https://marketing.appointme.today/clients" />
+    <link rel="canonical" href="https://marketing.appointme.today/" />
     <link rel="canonical" href="https://marketing.appointme.today/partners" />
 
 */
 
 const routes = [
-    { path: '/', redirect: '/clients' },
-    { path: '/clients', component: ClientsLanding, meta: { canonical: 'https://marketing.appointme.today/clients' } },
+    { path: '/', component: ClientsLanding, meta: { canonical: 'https://marketing.appointme.today/' } },
+    { path: '/clients', redirect: '/' },
     { path: '/partners', component: PartnersLanding, meta: { canonical: 'https://marketing.appointme.today/partners' } }
 ]
 
