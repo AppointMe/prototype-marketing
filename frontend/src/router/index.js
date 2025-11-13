@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ClientsLanding from '@/pages/ClientsLanding.vue'
 import PartnersLanding from '@/pages/PartnersLanding.vue'
+import BetaTestersForm from '@pages/BetaTestersForm.vue'
 
 /*
 
@@ -17,7 +18,8 @@ import PartnersLanding from '@/pages/PartnersLanding.vue'
 const routes = [
     { path: '/', component: ClientsLanding, meta: { canonical: 'https://marketing.appointme.today/' } },
     { path: '/clients', redirect: '/' },
-    { path: '/partners', component: PartnersLanding, meta: { canonical: 'https://marketing.appointme.today/partners' } }
+    { path: '/partners', component: PartnersLanding, meta: { canonical: 'https://marketing.appointme.today/partners' } },
+    { path: '/beta-testers', component: BetaTestersForm, meta: { canonical: 'https://marketing.appointme.today/beta-testers' } },
 ]
 
 const router = createRouter({
